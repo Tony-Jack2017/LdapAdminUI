@@ -1,12 +1,14 @@
 import React from 'react'
 import './App.css'
-import { Button } from 'antd'
+import { BrowserRouter, Routes } from 'react-router-dom'
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const App = () => (
+const App = (): React.ReactElement => (
     <div className="App">
-        <Button type="link">Hello World</Button>
+        <BrowserRouter>
+            <Routes>
+            </Routes>
+        </BrowserRouter>
     </div>
-);
+)
 
 export default App
