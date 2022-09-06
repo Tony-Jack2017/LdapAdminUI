@@ -1,22 +1,23 @@
 import React from 'react'
+import './index.scss'
 import { Layout } from 'antd'
 const { Header, Sider, Content } = Layout
+
 export interface LayoutOneProps {
   header: React.ReactNode
   sider: React.ReactNode
   content: React.ReactNode
-  children: React.ReactNode
 }
 
 const LayoutOne = (props: LayoutOneProps): React.ReactElement => {
   return (
         <div className="layout_one">
-            <Layout>
+            <Layout className="layout">
                 <Header>
                     {props.header}
                 </Header>
                 <Layout>
-                    <Sider>
+                    <Sider className="sider">
                         {props.sider}
                     </Sider>
                     <Content>

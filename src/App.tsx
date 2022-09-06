@@ -1,13 +1,18 @@
 import React from 'react'
+import { Routes } from 'react-router-dom'
 import './App.css'
-import { BrowserRouter, Routes } from 'react-router-dom'
+import RenderRoute from './components/RenderRoute'
+import { routes } from './router'
 
 const App = (): React.ReactElement => (
     <div className="App">
-        <BrowserRouter>
-            <Routes>
-            </Routes>
-        </BrowserRouter>
+        <Routes>
+            {
+                RenderRoute({
+                  routes
+                })
+            }
+        </Routes>
     </div>
 )
 
