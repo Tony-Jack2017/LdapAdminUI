@@ -1,9 +1,12 @@
-import Menu from '../pages/base/menu'
 import React from 'react'
+
+import Menu from '../page/base/menu'
+import Api from '../page/base/api'
+import Role from '../page/user/role'
 
 export interface RoutePersonal {
   path: string
-  redirect?: string
+  index?: boolean
   layout?: string
   element?: React.ReactNode
   children?: RoutePersonal[]
@@ -11,21 +14,30 @@ export interface RoutePersonal {
 
 const routes: RoutePersonal[] = [
   {
-    path: '/',
-    redirect: '/dashboard'
+    path: '/'
   },
   {
     path: '/system',
-    redirect: '/system/menu',
     layout: 'one',
     children: [
       {
-        path: '/system/menu',
+        index: true,
+        path: 'menu',
         element: <Menu />
       },
       {
-        path: '/system/api',
-        element: <Menu />
+        path: 'api',
+        element: <Api />
+      }
+    ]
+  },
+  {
+    path: '/user',
+    layout: 'one',
+    children: [
+      {
+        path: 'role',
+        element: <Role />
       }
     ]
   }

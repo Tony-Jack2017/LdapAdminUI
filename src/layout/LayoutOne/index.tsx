@@ -20,7 +20,7 @@ const LayoutOne = (props: LayoutOneProps): React.ReactElement => {
                     <Sider className="sider">
                         {props.sider}
                     </Sider>
-                    <Content>
+                    <Content className="content">
                         {props.content}
                     </Content>
                 </Layout>

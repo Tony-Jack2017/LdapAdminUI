@@ -5,17 +5,19 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard-with-typescript'
+    'standard'
   ],
-  overrides: [
-  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
     ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.json',
+    sourceType: 'module'
   },
   plugins: [
-    'react'
+    'react',
+    '@typescript-eslint'
   ],
   rules: {
   }
