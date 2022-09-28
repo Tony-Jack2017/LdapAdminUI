@@ -1,8 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios'
 const baseUrl = process.env.REACT_APP_API_URL
 
-console.log(baseUrl)
-
 const instance = axios.create({
   baseURL: baseUrl,
   timeout: 5000

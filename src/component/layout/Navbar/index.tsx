@@ -21,7 +21,6 @@ type MenuItem = Required<MenuProps>['items'][number]
 const Navbar = (): React.ReactElement => {
   const [items, setItems] = useState<MenuItem[]>([])
   const navigate = useNavigate()
-
   useEffect(() => {
     getMenuList({
       active: 1,
@@ -30,6 +29,7 @@ const Navbar = (): React.ReactElement => {
       handleData(resp.data)
     })
   }, [])
+  // handler
   const handleMenus = (data: MenuItemType[]): MenuItem[] => {
     return data.map((item: MenuItemType) => {
       if (item.children) {
@@ -53,6 +53,7 @@ const Navbar = (): React.ReactElement => {
   const handleClick: MenuProps['onClick'] = (e) => {
     navigate(e.key)
   }
+  // view
   return (
         <div className="navbar">
             <Menu onClick={handleClick} mode="inline" items={items} />

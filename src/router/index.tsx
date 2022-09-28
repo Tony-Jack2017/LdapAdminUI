@@ -1,8 +1,9 @@
 import React from 'react'
 
 import Menu from '../page/base/menu'
-import Api from '../page/base/api'
 import Role from '../page/user/role'
+import ApiBase from '../page/base/api/base'
+import ApiGroup from '../page/base/api/group'
 
 export interface RoutePersonal {
   path: string
@@ -27,7 +28,16 @@ const routes: RoutePersonal[] = [
       },
       {
         path: 'api',
-        element: <Api />
+        children: [
+          {
+            path: 'base',
+            element: <ApiBase />
+          },
+          {
+            path: 'group',
+            element: <ApiGroup />
+          }
+        ]
       }
     ]
   },
