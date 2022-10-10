@@ -4,6 +4,7 @@ import Menu from '../page/base/menu'
 import Role from '../page/user/role'
 import ApiBase from '../page/base/api/base'
 import ApiGroup from '../page/base/api/group'
+import UserList from '../page/user/list'
 
 export interface RoutePersonal {
   path: string
@@ -45,6 +46,10 @@ const routes: RoutePersonal[] = [
     path: '/user',
     layout: 'one',
     children: [
+      {
+        path: 'list',
+        element: <UserList />
+      },
       {
         path: 'role',
         element: <Role />

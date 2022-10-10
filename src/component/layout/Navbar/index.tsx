@@ -36,12 +36,14 @@ const Navbar = (): React.ReactElement => {
         return {
           label: item.name,
           key: item.path,
+          disabled: item.status === 2,
           children: handleMenus(item.children)
         }
       } else {
         return {
           label: item.name,
-          key: item.path
+          key: item.path,
+          disabled: item.status === 2
         }
       }
     })
