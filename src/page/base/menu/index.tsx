@@ -15,7 +15,7 @@ import {
 } from '../../../api/base/menu'
 import './index.scss'
 
-// vendor variate
+// vendor variable
 const { Option } = Select
 
 // type
@@ -97,7 +97,6 @@ const Action = (props: ActionProp) => {
         </>
   )
 }
-
 const TableAction = (props: TableActionProp):React.ReactElement => {
   return (
         <Button type="primary" shape="round" icon={<EditFilled />} onClick={props.handleClick}>
@@ -105,7 +104,6 @@ const TableAction = (props: TableActionProp):React.ReactElement => {
         </Button>
   )
 }
-
 const Dialog = (props: DialogProp):React.ReactElement => {
   const [form] = useForm<DataType>()
   const [confirmLoading, setConfirmLoading] = useState(false)
@@ -260,12 +258,8 @@ const Menu = (): React.ReactElement => {
             <>
                 {
                     status === 1
-                      ? <Tag color="#87d068">
-                        启用
-                    </Tag>
-                      : <Tag color="#f50">
-                        禁用
-                    </Tag>
+                      ? <Tag color="#87d068">启用</Tag>
+                      : <Tag color="#f50">禁用</Tag>
                 }
             </>
       )
@@ -359,6 +353,4 @@ const Menu = (): React.ReactElement => {
         </div>
   )
 }
-
-// view
 export default Menu
